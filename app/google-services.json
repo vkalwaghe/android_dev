@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "278729868577",
+    "project_id": "shirditaxi-57b5c",
+    "storage_bucket": "shirditaxi-57b5c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278729868577:android:885224c0c2ff54c0272a60",
+        "android_client_info": {
+          "package_name": "com.example.shirditaxi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBFjbsFNm-vj_v2jLbteRsLshQLbSX0hY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
