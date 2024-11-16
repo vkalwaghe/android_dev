@@ -1,11 +1,20 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.CategoryFilter.include
+
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
+    id("com.android.application") version "8.1.0" apply false
+    id("com.android.library") version "8.1.0" apply false
+    id("org.jetbrains.kotlin.android") apply false
     id("com.google.gms.google-services") version "4.3.15" apply false
 }
 
-// If you have dependencies that need to be added here, keep this block
 dependencies {
-    // Add other dependencies if necessary
+    val repositoriesMode = null
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS) // Use settings repositories if defined
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
+
+rootProject.name = "Shirdi_Taxi"
+include(":app")
