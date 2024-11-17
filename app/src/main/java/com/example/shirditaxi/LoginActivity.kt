@@ -1,9 +1,9 @@
 package com.example.shirditaxi
 
+import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import android.content.Intent
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: android.widget.Button
-    private lateinit var googleLoginButton: SignInButton // Changed to SignInButton
+    private lateinit var googleLoginButton: SignInButton
 
     private val RC_SIGN_IN = 9001 // Request code for Google Sign-In
 
@@ -36,13 +36,17 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         // Configure Google Sign-In
-        googleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN)
+        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id)) // Ensure this is set properly
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
 
         // Initialize UI components
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
-        googleLoginButton = findViewById(R.id.googleSignInButton) // Correctly cast to SignInButton
+        googleLoginButton = findViewById(R.id.googleSignInButton)
 
         // Email and Password login
         loginButton.setOnClickListener {
@@ -91,29 +95,29 @@ class LoginActivity : AppCompatActivity() {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 val account = task.getResult(ApiException::class.java)
-                firebaseAuthWithGoogle(account)
+                account?.idToken?.let { idToken ->
+                    firebaseAuthWithGoogle(idToken)
+                }
             } catch (e: ApiException) {
-                Toast.makeText(this, "Google Sign-In failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Google Sign-In failed: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     // Authenticate with Firebase using Google credentials
-    private fun firebaseAuthWithGoogle(account: GoogleSignInAccount?) {
-        account?.let {
-            val credential = GoogleAuthProvider.getCredential(it.idToken, null)
-            auth.signInWithCredential(credential)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        val user = auth.currentUser
-                        saveUserToDatabase(user)
-                        Toast.makeText(this, "Welcome, ${user?.email}", Toast.LENGTH_SHORT).show()
-                        navigateToHomeActivity()
-                    } else {
-                        Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
-                    }
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    saveUserToDatabase(user)
+                    Toast.makeText(this, "Welcome, ${user?.email}", Toast.LENGTH_SHORT).show()
+                    navigateToHomeActivity()
+                } else {
+                    Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
                 }
-        }
+            }
     }
 
     // Save user information to Firebase Realtime Database
@@ -138,7 +142,7 @@ class LoginActivity : AppCompatActivity() {
     private fun navigateToHomeActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
-        finish() // Close LoginActivity so the user can't go back to it
+        finish() // Close LoginActivity to prevent navigating back to it
     }
 
     override fun onStart() {

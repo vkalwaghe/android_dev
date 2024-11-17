@@ -80,67 +80,36 @@ class HomeActivity : AppCompatActivity() {
                 val estimatedFare = calculateFare(startGeoPoint, destinationGeoPoint)
                 val estimatedTime = calculateTime(startGeoPoint, destinationGeoPoint)
 
-                fareTextView.text = "Estimated Fare: ₹$estimatedFare"
+                fareTextView.text = "Estimated Fare: $$estimatedFare"
                 timeTextView.text = "Estimated Time: $estimatedTime mins"
             } else {
-                Toast.makeText(this, "Unable to determine locations. Please check the addresses.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Unable to find locations", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    // Convert address to GeoPoint
     private fun getGeoPointFromAddress(address: String): GeoPoint? {
-        return try {
-            val geocoder = Geocoder(this, Locale.getDefault())
-            val addresses = geocoder.getFromLocationName(address, 1)
-            if (!addresses.isNullOrEmpty()) {
-                val location = addresses[0]
-                GeoPoint(location.latitude, location.longitude)
-            } else {
-                null
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-            null
-        }
+        val geoCoder = Geocoder(this, Locale.getDefault())
+        val location = geoCoder.getFromLocationName(address, 1)
+        return location?.firstOrNull()?.let { GeoPoint(it.latitude, it.longitude) }
     }
 
-    // Add a marker to the map for a specific GeoPoint
-    private fun plotLocationOnMap(geoPoint: GeoPoint, title: String) {
+    private fun plotLocationOnMap(geoPoint: GeoPoint, label: String) {
         val marker = Marker(mapView)
         marker.position = geoPoint
-        marker.title = title
-        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+        marker.title = label
         mapView.overlays.add(marker)
-        mapView.invalidate()
     }
 
-    // Example function to calculate fare
     private fun calculateFare(start: GeoPoint, destination: GeoPoint): Double {
-        val distance = calculateDistance(start, destination) // Distance in km
-        return (distance * 10).coerceAtLeast(50.0) // Example: ₹10 per km, minimum fare ₹50
+        // Dummy fare calculation logic
+        val distance = start.distanceToAsDouble(destination) / 1000 // Convert to km
+        return distance * 10 // Assume $10 per km
     }
 
-    // Example function to calculate travel time
     private fun calculateTime(start: GeoPoint, destination: GeoPoint): Int {
-        val distance = calculateDistance(start, destination) // Distance in km
-        return (distance * 2).toInt().coerceAtLeast(10) // Example: 2 minutes per km, minimum 10 minutes
-    }
-
-    // Calculate distance between two GeoPoints
-    private fun calculateDistance(start: GeoPoint, destination: GeoPoint): Double {
-        val earthRadiusKm = 6371.0
-
-        val dLat = Math.toRadians(destination.latitude - start.latitude)
-        val dLon = Math.toRadians(destination.longitude - start.longitude)
-
-        val lat1 = Math.toRadians(start.latitude)
-        val lat2 = Math.toRadians(destination.latitude)
-
-        val a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2)
-        val c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-
-        return earthRadiusKm * c
+        // Dummy time calculation logic
+        val distance = start.distanceToAsDouble(destination) / 1000 // Convert to km
+        return (distance / 40).toInt() // Assume an average speed of 40 km/h
     }
 }

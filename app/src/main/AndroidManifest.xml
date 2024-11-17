@@ -10,10 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
 
+        <!-- Splash Activity -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme"
@@ -24,9 +26,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity"
+        <!-- Login Activity -->
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" /> <!-- Specify exported for each activity -->
 
-    </application>
+        <!-- Home Activity -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" /> <!-- Add this line for HomeActivity -->
 
+    </application>
 </manifest>

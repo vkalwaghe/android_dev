@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.shirditaxi"
-    compileSdk = 35 // Ensure your compileSdk matches the latest version you are targeting.
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.shirditaxi"
         minSdk = 21
-        targetSdk = 35 // Ensure compatibility with the latest Android version.
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -41,15 +41,15 @@ dependencies {
     // Firebase BOM (manages Firebase dependencies' versions)
     implementation(platform("com.google.firebase:firebase-bom:32.0.0"))
 
-    // Firebase dependencies (version controlled by BOM)
-    implementation("com.google.firebase:firebase-auth-ktx")       // Firebase Authentication
-    implementation("com.google.firebase:firebase-database-ktx")   // Firebase Realtime Database
-    implementation("com.google.firebase:firebase-firestore-ktx")  // Firestore (optional)
+    // Firebase dependencies
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx") // Optional
 
-    // Google Sign-In library for Authentication
+    // Google Sign-In
     implementation("com.google.android.gms:play-services-auth:20.6.0")
 
-    // Google Location Services (needed for `FusedLocationProviderClient`)
+    // Google Location Services
     implementation("com.google.android.gms:play-services-location:21.0.1")
 
     // OSM Map Library
@@ -59,12 +59,12 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.preference:preference-ktx:1.1.1") // Preference Library
+    implementation("androidx.preference:preference-ktx:1.1.1")
 
-    // Material Design Components
+    // Material Design
     implementation("com.google.android.material:material:1.9.0")
 
-    // Testing Dependencies
+    // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
