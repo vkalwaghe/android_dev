@@ -18,6 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.sanjivani.shirditaxi.activities.RideHistoryActivity
 
 class AccountPageActivity : AppCompatActivity() {
 
@@ -31,7 +32,7 @@ class AccountPageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_account)
 
         // Initialize views
-        val backButton: ImageButton = findViewById(R.id.backButton)
+        val completedRidesButton: Button=findViewById(R.id.completedRidesButton)
         val changeProfilePhotoButton: Button = findViewById(R.id.changeProfilePhotoButton)
         val myProfileButton: Button = findViewById(R.id.myProfileButton)
         val paymentStatusButton: Button = findViewById(R.id.paymentStatusButton)
@@ -47,13 +48,18 @@ class AccountPageActivity : AppCompatActivity() {
         loadProfileImage()
 
         // Back button logic
+        val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             finish()
         }
 
-        // Navigate to ProfileActivity
         myProfileButton.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+        completedRidesButton.setOnClickListener {
+            val intent = Intent(this, RideHistoryActivity::class.java)
             startActivity(intent)
         }
 

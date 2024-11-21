@@ -26,7 +26,8 @@
 
         <!-- Other Activities -->
         <activity android:name=".ScanQRActivity" android:exported="false" />
-        <activity android:name=".AccountActivity" android:exported="false" />
+        <activity android:name=".activities.AccountPageActivity" android:exported="false" />
+        <activity android:name=".activities.RideHistoryActivity" />
         <activity android:name=".MainActivity" android:exported="false" />
         <activity android:name=".ProfileActivity" android:exported="false" />
         <activity
