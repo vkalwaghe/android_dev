@@ -21,6 +21,12 @@ class RideHistoryActivity : AppCompatActivity() {
         rideHistoryRecyclerView = findViewById(R.id.rideHistoryRecyclerView)
         rideHistoryRecyclerView.layoutManager = LinearLayoutManager(this)
 
+
+        val backButton: ImageButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            finish() // Closes the activity and navigates back
+        }
+
         // Sample ride history data
         val rides = listOf(
             Ride("1", "2024-11-20", "Location A", "Location B", "₹300"),
