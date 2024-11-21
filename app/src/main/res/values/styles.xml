@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style for Circular Shape -->
+    <style name="CircularShape">
+        <item name="shapeAppearanceOverlay">@style/CircularShapeAppearance</item>
+    </style>
+
+    <!-- Circular Shape Appearance -->
+    <style name="CircularShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Ensures the image is circular -->
+    </style>
+</resources>

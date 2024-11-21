@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">shirdi taxi</string>
+    <string name="activity_account">Account Page</string>
+    <string name="change_profile_photo">Change Profile Photo</string>
+    <string name="my_profile">My Profile</string>
+    <string name="ride_history">Ride History</string>
+    <string name="activity_payment_status">Payment Options</string>
+    <string name="logout">Log Out</string>
+</resources>
