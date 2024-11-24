@@ -57,19 +57,11 @@
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:layout_marginTop="12dp"
+                    android:layout_marginBottom="40dp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="Profile Picture"
                     android:src="@drawable/account_circle_24" />
 
-                <Button
-                    android:id="@+id/changeProfilePhotoButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="#00BDFE"
-                    android:text="Change Profile Photo"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginBottom="24dp" />
 
                 <!-- Profile Options with Icons and Buttons -->
                 <LinearLayout
@@ -78,12 +70,14 @@
                     android:orientation="vertical">
 
                     <!-- My Profile Option -->
+
+                    <!-- Payment Status Option -->
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="15dp">
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="40dp"
@@ -103,7 +97,6 @@
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Ride History Option -->
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -114,21 +107,20 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_completed_rides" />
+                            android:src="@drawable/booking_info" />
 
                         <Button
-                            android:id="@+id/completedRidesButton"
+                            android:id="@+id/bookinginfo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:background="?android:attr/selectableItemBackground"
                             android:gravity="center_vertical"
-                            android:text="Ride History"
+                            android:text="Booking Info"
                             android:textColor="#6A5ACD"
                             android:textSize="20sp" />
                     </LinearLayout>
 
-                    <!-- Payment Status Option -->
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -177,6 +169,7 @@
                             android:textColor="#6A5ACD"
                             android:textSize="20sp" />
                     </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -261,5 +254,4 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

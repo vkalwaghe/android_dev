@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/backgraound">
+
+
+    <!-- Driver 1 Name Label -->
+
+    <TextView
+        android:id="@+id/driverDetailsTitle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="#00BDFE"
+        android:gravity="center"
+        android:text="Driver Details"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="54dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="Navigate Back"
+        android:src="@drawable/arrow_circle_left_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/driverNameLabel1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Name:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/driverDetailsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/driverNameValue1"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Driver 1 Name Value -->
+    <TextView
+        android:id="@+id/driverNameValue1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sagar Bahirt"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/driverNameLabel1"
+        app:layout_constraintStart_toEndOf="@id/driverNameLabel1"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 1 Phone Label -->
+    <TextView
+        android:id="@+id/phoneNumberLabel1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Phone:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/driverNameLabel1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/phoneNumberValue1"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Driver 1 Phone Value -->
+    <TextView
+        android:id="@+id/phoneNumberValue1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+91 9673731160"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/phoneNumberLabel1"
+        app:layout_constraintStart_toEndOf="@id/phoneNumberLabel1"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 1 Call Button -->
+
+    <!-- Driver 2 Name Label -->
+    <Button
+        android:id="@+id/callDriverButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Call Driver"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberLabel1" />
+
+    <TextView
+        android:id="@+id/driverNameLabel2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Name:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/callDriverButton1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/driverNameValue2"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Driver 2 Name Value -->
+    <TextView
+        android:id="@+id/driverNameValue2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mahesh Khilari"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/driverNameLabel2"
+        app:layout_constraintStart_toEndOf="@id/driverNameLabel2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 2 Phone Label -->
+    <TextView
+        android:id="@+id/phoneNumberLabel2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Phone:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/driverNameLabel2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/phoneNumberValue2"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Driver 2 Phone Value -->
+    <TextView
+        android:id="@+id/phoneNumberValue2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+91 7218123616"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/phoneNumberLabel2"
+        app:layout_constraintStart_toEndOf="@id/phoneNumberLabel2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 2 Call Button -->
+    <Button
+        android:id="@+id/callDriverButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Call Driver"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberLabel2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 3 Name Label -->
+    <TextView
+        android:id="@+id/driverNameLabel3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Name:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/callDriverButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/driverNameValue3"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Driver 3 Name Value -->
+    <TextView
+        android:id="@+id/driverNameValue3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Yogesh Satode"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/driverNameLabel3"
+        app:layout_constraintStart_toEndOf="@id/driverNameLabel3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 3 Phone Label -->
+    <TextView
+        android:id="@+id/phoneNumberLabel3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Phone:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/driverNameLabel3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/phoneNumberValue3"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Driver 3 Phone Value -->
+    <TextView
+        android:id="@+id/phoneNumberValue3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+91 9822476494"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/phoneNumberLabel3"
+        app:layout_constraintStart_toEndOf="@id/phoneNumberLabel3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 3 Name Label -->
+    <Button
+        android:id="@+id/callDriverButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Call Driver"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumberLabel3" />
+
+    <!-- Driver 4 Name Value -->
+    <TextView
+        android:id="@+id/driverNameLabel4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Name:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/driverNameValue4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/callDriverButton3" />
+
+    <TextView
+        android:id="@+id/driverNameValue4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="satish Lokhande"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/driverNameLabel4"
+        app:layout_constraintStart_toEndOf="@id/driverNameLabel4"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 4 Phone Label -->
+    <TextView
+        android:id="@+id/phoneNumberLabel4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Phone:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/driverNameLabel4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/phoneNumberValue4"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Driver 4 Phone Value -->
+    <TextView
+        android:id="@+id/phoneNumberValue4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+91 8265061775"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/phoneNumberLabel4"
+        app:layout_constraintStart_toEndOf="@id/phoneNumberLabel4"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver 4 Call Button -->
+    <Button
+        android:id="@+id/callDriverButton4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Call Driver"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberValue4"
+        app:layout_constraintVertical_bias="0.267" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

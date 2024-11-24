@@ -3,33 +3,42 @@
 
     <!-- Declare features and permissions -->
     <uses-feature android:name="android.hardware.camera" android:required="true" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
-        android:label="@string/app_name"
+        android:label="shirdi taxi"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShirdiTaxi">
 
+
         <!-- Launcher Activity -->
-        <activity
-            android:name=".AccountPageActivity"
+        <activity android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Other Activities -->
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegistrationActivity" android:exported="false" />
+        <activity android:name=".ForgotPasswordActivity" android:exported="false" />
+        <activity android:name=".DriverDetailsActivity" android:exported="false" />
+        <activity android:name=".CarActivity" android:exported="false" />
+        <activity android:name=".Calculator" android:exported="false" />
+        <activity android:name=".ServicesActivity" android:exported="false" />
+        <activity android:name=".AccountActivity" android:exported="false" />
         <activity android:name=".ScanQRActivity" android:exported="false" />
-        <activity android:name=".activities.AccountPageActivity" android:exported="false" />
-        <activity android:name=".activities.RideHistoryActivity" />
+        <activity android:name=".RideHistoryActivity"/>
+        <activity android:name=".PickTimeActivity"/>
+        <activity android:name=".InformationActivity"/>
         <activity android:name=".MainActivity" android:exported="false" />
         <activity android:name=".ProfileActivity" android:exported="false" />
+        <activity android:name=".BeforeHomeActivity" android:exported="false" />
         <activity
             android:name=".PaymentActivity"
             android:label="@string/activity_payment_status"

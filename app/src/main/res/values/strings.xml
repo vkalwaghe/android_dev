@@ -6,4 +6,5 @@
     <string name="ride_history">Ride History</string>
     <string name="activity_payment_status">Payment Options</string>
     <string name="logout">Log Out</string>
+    <string name="google_icon">Google icon</string>
 </resources>

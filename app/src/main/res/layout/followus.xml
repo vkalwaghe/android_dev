@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@drawable/followback">
+
+    <!-- Title Section -->
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="260dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="Navigate Back"
+        android:src="@drawable/arrow_circle_left_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Follow Us"
+        android:textColor="#00BDFE"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+    <!-- Social Media Icons Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <!-- Instagram -->
+        <ImageButton
+            android:id="@+id/instagramButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/insta"
+            android:contentDescription="Instagram"
+            android:layout_margin="16dp"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- Facebook -->
+        <ImageButton
+            android:id="@+id/facebookButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/facebook"
+            android:contentDescription="Facebook"
+            android:layout_margin="16dp"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- LinkedIn -->
+        <ImageButton
+            android:id="@+id/linkedinButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/linkedin"
+            android:contentDescription="LinkedIn"
+            android:layout_margin="16dp"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- YouTube -->
+        <ImageButton
+            android:id="@+id/youtubeButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/youtube"
+            android:contentDescription="YouTube"
+            android:layout_margin="16dp"
+            android:background="?android:attr/selectableItemBackground" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/contactTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Contact Us"
+        android:textColor="#00BDFE"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Contact Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <!-- Email -->
+        <ImageButton
+            android:id="@+id/emailButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/email"
+            android:contentDescription="Email"
+            android:layout_margin="16dp"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- Phone -->
+        <ImageButton
+            android:id="@+id/phoneButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/call"
+            android:contentDescription="Phone"
+            android:layout_margin="16dp"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- WhatsApp -->
+        <ImageButton
+            android:id="@+id/whatsappButton"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/wp"
+            android:contentDescription="WhatsApp"
+            android:layout_margin="16dp"
+            android:background="?android:attr/selectableItemBackground" />
+    </LinearLayout>
+
+    <!-- Website Section -->
+    <TextView
+        android:id="@+id/websiteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visit our Website"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/websiteButton"
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#00BDFE"
+        android:text="Go to Website"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

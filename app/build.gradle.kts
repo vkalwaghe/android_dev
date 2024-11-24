@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
-
 android {
     namespace = "com.sanjivani.shirditaxi"
     compileSdk = 35  // Updated to compile against SDK 35
